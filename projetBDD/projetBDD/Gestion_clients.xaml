@@ -1,0 +1,53 @@
+﻿<Window x:Class="projetBDD.Gestion_clients"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:projetBDD"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="Gestion_clients" Height="700" Width="1000" AllowsTransparency="True" WindowStyle="None">
+    <Grid>
+        <Label Content="        GESTION D'UN CLIENT" FontSize="30" FontFamily="Javanese Text" Margin="300,0,254,620"/>
+        <Button Name="bt_exit"
+            Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+            ToolTip="Fermer la fenêtre" Background="{x:Null}" BorderBrush="{x:Null}" Margin="960,-650,0,0" Click="bt_exit_Click">
+            <materialDesign:PackIcon
+                Kind="CloseCircle" Height="21" Width="30" />
+        </Button>
+        <Button Name="bt_retour"
+            Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}"
+            ToolTip="Page précédente"  Click="bt_retour_Click" Height="Auto" Width="Auto" Background="#DD000000" Foreground="#FFD5D4D9" BorderBrush="#DD000000" Cursor="Hand" Margin="10,10,950,649">
+            <materialDesign:PackIcon
+                Kind="ArrowBack" />
+        </Button>
+        <Button Content="Supprimer client" HorizontalAlignment="Left" Margin="300,611,0,0" VerticalAlignment="Top" Width="172" Click="Supprimer_Click"/>
+        <Label Content="Ligne selectionnée :" HorizontalAlignment="Left" Margin="10,512,0,0" VerticalAlignment="Top" Width="143" FontWeight="Bold"/>
+        <TextBox Name ="lscontact_clients" materialDesign:HintAssist.Hint="contact" HorizontalAlignment="Left" Height="23" Margin="314,548,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="1.377,0.443"/>
+        <TextBox Name ="lsadhesion" materialDesign:HintAssist.Hint="adhesion" HorizontalAlignment="Left" Height="23" Margin="472,548,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox
+            x:Name="tbnom_clients"
+            materialDesign:TextFieldAssist.HasClearButton="True"
+            materialDesign:HintAssist.Hint="Nom"
+            Margin="212,60,636,595" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox
+            x:Name="tbprenom_clients"
+            materialDesign:TextFieldAssist.HasClearButton="True"
+            materialDesign:HintAssist.Hint="Prénom"
+            Margin="435,60,402,595" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"/>
+        <Button Content="Rechercher" HorizontalAlignment="Left" Margin="702,68,0,0" VerticalAlignment="Top" Width="225" Height="43" Click="Rechercher_Click"/>
+        <DataGrid Name ="dgClients" HorizontalAlignment="Left" Height="376" Margin="10,113,0,0" VerticalAlignment="Top" Width="910" SelectionChanged="dgClients_SelectionChanged"/>
+        <Button Content="Modifier" HorizontalAlignment="Left" Margin="559,611,0,0" VerticalAlignment="Top" Width="163" Click="MAJ_Click"/>
+        <TextBox x:Name ="lsnom_clients" materialDesign:HintAssist.Hint="nom" HorizontalAlignment="Left" Height="23" Margin="148,548,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="1.377,0.443" IsEnabled="False"/>
+        <TextBox x:Name ="lsid_clients" materialDesign:HintAssist.Hint="id" HorizontalAlignment="Left" Height="23" Margin="18,548,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="1.377,0.443" IsEnabled="False" Cursor="Arrow"/>
+        <Button Content="adhesion" HorizontalAlignment="Left" Margin="817,611,0,0" VerticalAlignment="Top" Width="163" Click="MAJad_Click"/>
+        <Button Content="Exporter en XML/JSON" HorizontalAlignment="Left" Margin="47,611,0,0" VerticalAlignment="Top" Width="184" Click="Exports_Click"/>
+    </Grid>
+</Window>

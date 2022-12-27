@@ -1,0 +1,43 @@
+﻿<Window x:Class="projetBDD.ClientAdhesion"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:projetBDD"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="ClientAdhesion" Height="700" Width="1000" AllowsTransparency="True" WindowStyle="None">
+    <Grid Background="#FFE5E4E4">
+        <Label Content="ADHESION CLIENTS" FontSize="30" FontFamily="Javanese Text" Margin="300,0,300,620"/>
+        <Button Name="bt_exit"
+            Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+            ToolTip="Fermer la fenêtre" Background="{x:Null}" BorderBrush="{x:Null}" Margin="960,5,0,655" Click="bt_exit_Click" HorizontalAlignment="Left" Width="40">
+            <materialDesign:PackIcon
+                Kind="CloseCircle" Height="21" Width="30" />
+        </Button>
+        <Button Name="bt_retour"
+            Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}"
+            ToolTip="Page précédente"  Click="bt_retour_Click" Height="Auto" Width="Auto" Background="#DD000000" Foreground="#FFD5D4D9" BorderBrush="#DD000000" Cursor="Hand" Margin="10,10,950,649">
+            <materialDesign:PackIcon
+                Kind="ArrowBack" />
+        </Button>
+        <DataGrid Name ="dgAdhesion" HorizontalAlignment="Left" Height="367" Margin="15,169,0,0" VerticalAlignment="Top" Width="961" Background="#FFD7CECE"/>
+
+        <ComboBox Name ="cbFidelio" materialDesign:HintAssist.Hint="Trier par"   HorizontalAlignment="Left" Margin="363,111,0,0" VerticalAlignment="Top" Width="132" Height="43"/>
+        <Button
+            Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}"
+            ToolTip="Rechercher" Margin="571,118,389,542" Background="#FFE5E4E4" BorderBrush="#FFE5E4E4" Foreground="#DD000000" Click="Rechercher_Click" RenderTransformOrigin="0.715,0.91" Height="Auto" Width="Auto">
+            <materialDesign:PackIcon
+                Kind="Magnify" Height="30" Width="22"/>
+        </Button>
+        <Button Content="Exporter en XML/JSON" HorizontalAlignment="Left" Margin="84,583,0,0" VerticalAlignment="Top" Height="43" Width="182" Click="Exports_Click" Background="#FFD7CECE" Foreground="#FF000609" BorderBrush="#FFD7CECE"/>
+
+    </Grid>
+</Window>

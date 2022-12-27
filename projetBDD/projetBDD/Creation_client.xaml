@@ -1,0 +1,142 @@
+﻿<Window x:Class="projetBDD.Creation_client"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:projetBDD"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="Creation_client" Height="700" Width="1000" AllowsTransparency="True" WindowStyle="None">
+    <Grid>
+        <Grid x:Name="grid_choix" Margin="10,10,0,444">
+            <Button Name="bt_exit"
+            Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+            ToolTip="Fermer la fenêtre" Background="{x:Null}" BorderBrush="{x:Null}" Margin="950,-206,0,0" Click="bt_exit_Click">
+                <materialDesign:PackIcon
+                Kind="CloseCircle" Height="21" Width="30" />
+            </Button>
+            <Button Name="bt_retour"
+            Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}"
+            ToolTip="Page précédente"  Click="bt_retour_Click" Height="Auto" Width="Auto" Background="#DD000000" Foreground="#FFD5D4D9" BorderBrush="#DD000000" Cursor="Hand" Margin="10,10,940,200">
+                <materialDesign:PackIcon
+                    Kind="ArrowBack"/>
+            </Button>
+            <Label Content="CREATION D'UN NOUVEAU CLIENT" FontSize="30" FontFamily="Javanese Text" Margin="196,0,65,159"/>
+            <ComboBox Name="cb_client"
+        Style="{StaticResource MaterialDesignOutlinedComboBox}"
+            materialDesign:HintAssist.Hint= "Type de Client" Margin="20,120,700,0" Height="92" Width="270" FontFamily="Javanese Text" FontSize="20" VerticalAlignment="Top">
+                <ComboBoxItem
+                Content="INDIVIDUEL" />
+                <ComboBoxItem
+                Content="BOUTIQUE" />
+            </ComboBox>
+            <Button x:Name="bt_verifProduit"
+                Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                materialDesign:ButtonAssist.CornerRadius="25"
+                ToolTip="MaterialDesignRaisedDarkButton with Round Corners"
+                IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" FontFamily="Javanese Text" Margin="350,65,500,0" Height="50" Click="bt_verifClient_Click">
+                <TextBlock
+                    Text="confirmer" />
+            </Button>
+
+        </Grid>
+        <Grid x:Name="grid_original">
+            <TextBox x:Name="tx_nom" Height="92"
+            Style="{StaticResource MaterialDesignOutlinedTextBox}"
+            TextWrapping="Wrap"
+            materialDesign:TextFieldAssist.CharacterCounterVisibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=MaterialDesignOutlinedTextBoxTextCountComboBox}"
+            VerticalScrollBarVisibility="Auto"
+            materialDesign:HintAssist.Hint="Nom du Client/Boutique" FontFamily="Javanese Text" FontSize="20" Margin="342,129,388,479" />
+            <Button
+            Style="{StaticResource MaterialDesignRaisedDarkButton}"
+            materialDesign:ButtonAssist.CornerRadius="25"
+            ToolTip="MaterialDesignRaisedDarkButton with Round Corners"
+            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" Height="50" Margin="770,610,30,19" Click="Button_Click" Cursor="Hand">
+                <TextBlock
+                Text="CONFIRMER" />
+            </Button>
+            <TextBox x:Name="tx_prenom" Height="92"
+                Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                TextWrapping="Wrap"
+                materialDesign:TextFieldAssist.CharacterCounterVisibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=MaterialDesignOutlinedTextBoxTextCountComboBox}"
+                VerticalScrollBarVisibility="Auto"
+                materialDesign:HintAssist.Hint="Prenom du Client" FontFamily="Javanese Text" FontSize="20" Margin="657,129,73,479" />
+        </Grid>
+        <ScrollViewer Margin="0,240,0,100" Name="sc_original" Visibility="Visible">
+            <Grid Margin="0,0,0,0">
+                <Label Margin="0,0,0,660" Content="-----------------ADRESSE-------------------------------------------------------------------------------------------------------"
+                       FontFamily="Javanese Text" FontSize="20" ></Label>
+                <TextBox x:Name="tx_rue" Height="85"
+                    Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                    TextWrapping="Wrap"
+                    materialDesign:TextFieldAssist.CharacterCounterVisibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=MaterialDesignOutlinedTextBoxTextCountComboBox}"
+                    VerticalScrollBarVisibility="Auto"
+                    materialDesign:HintAssist.Hint="Rue" FontFamily="Javanese Text" FontSize="20" Margin="30,43,293,585" />
+                <TextBox x:Name="tx_ville" Height="85"
+                    Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                    TextWrapping="Wrap"
+                    materialDesign:TextFieldAssist.CharacterCounterVisibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=MaterialDesignOutlinedTextBoxTextCountComboBox}"
+                    VerticalScrollBarVisibility="Auto"
+                    materialDesign:HintAssist.Hint="Ville" FontFamily="Javanese Text" FontSize="20" Margin="30,145,506,483" />
+                <TextBox x:Name="tx_province" Height="85"
+                    Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                    TextWrapping="Wrap"
+                    materialDesign:TextFieldAssist.CharacterCounterVisibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=MaterialDesignOutlinedTextBoxTextCountComboBox}"
+                    VerticalScrollBarVisibility="Auto"
+                    materialDesign:HintAssist.Hint="Province" FontFamily="Javanese Text" FontSize="20" Margin="506,145,30,483" />
+                <TextBox x:Name="tx_CP" PreviewTextInput="PreviewTextInput" Height="85"
+                    Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                    TextWrapping="Wrap"
+                    materialDesign:TextFieldAssist.CharacterCounterVisibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=MaterialDesignOutlinedTextBoxTextCountComboBox}"
+                    VerticalScrollBarVisibility="Auto"
+                    materialDesign:HintAssist.Hint="Code Postal" FontFamily="Javanese Text" FontSize="20" Margin="720,43,30,585" Cursor="Arrow" />
+                <Label Name="fidelio" Margin="0,460,0,208" Content="-----------------FIDELIO-------------------------------------------------------------------------------------------------------"
+                    FontFamily="Javanese Text" FontSize="20" />
+                <TextBox x:Name="tx_numTel" PreviewTextInput="PreviewTextInput" Height="85"
+                    Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                    TextWrapping="Wrap"
+                    materialDesign:TextFieldAssist.CharacterCounterVisibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=MaterialDesignOutlinedTextBoxTextCountComboBox}"
+                    VerticalScrollBarVisibility="Auto"
+                    materialDesign:HintAssist.Hint="Numero de téléphone" FontFamily="Javanese Text" FontSize="20" Margin="30,269,506,359" />
+                <PasswordBox Name="tx_mdp" Margin="506,-90,30,0" Height="85"
+                        Style="{StaticResource MaterialDesignOutlinedPasswordBox}"
+                        materialDesign:HintAssist.Hint="Mot de passe" FontFamily="Javanese Text" FontSize="20"/>
+                <TextBox x:Name="tx_couriel" Height="85"
+                    Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                    TextWrapping="Wrap"
+                    materialDesign:TextFieldAssist.CharacterCounterVisibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=MaterialDesignOutlinedTextBoxTextCountComboBox}"
+                    VerticalScrollBarVisibility="Auto"
+                    materialDesign:HintAssist.Hint="Adresse Mail" FontFamily="Javanese Text" FontSize="20" Margin="30,377,506,251" />
+                <Label Margin="0,227,0,433" Content="-----------------CONTACT-------------------------------------------------------------------------------------------------------"
+                    FontFamily="Javanese Text" FontSize="20" />
+                <StackPanel Name="st_fidelio" Margin="0,505,0,0" Height="208" Width="983">
+                    <CheckBox Name="ck_normal"
+                        VerticalAlignment="Center" IsChecked="{Binding IsSelected}" 
+                        Margin="30,0,70,0" Height="52"
+                        FontFamily="Javanese Text" FontSize="20" Content="  Fidelio                |    Coût : 15€     |   Durée : 1 An     |   Rabais de 5 %"/>
+                    <CheckBox IsChecked="{Binding IsSelected}" Name="ck_or"
+                        Height="52" Margin="30,0,70,0"
+                        FontFamily="Javanese Text" FontSize="20" Content="  Fidelio Or           |    Coût : 25€    |   Durée : 2 Ans   |   Rabais de 8 %"/>
+                    <CheckBox IsChecked="{Binding IsSelected}" Name="ck_platine"
+                        Height="52" Margin="30,0,70,0"
+                        FontFamily="Javanese Text" FontSize="20" Content="  Fidelio Platine   |    Coût : 60€    |   Durée : 2 Ans   |   Rabais de 10 %"/>
+                    <CheckBox IsChecked="{Binding IsSelected}" Name="ck_max"
+                        Height="52" Margin="30,0,70,0"
+                        FontFamily="Javanese Text" FontSize="20" Content="  Fidelio Max        |   Coût : 100€   |   Durée : 3 Ans   |   Rabais de 12 %"/>
+
+                </StackPanel>
+                <PasswordBox x:Name="tx_mdpConfir" Margin="506,378,30,258" Height="85"
+                    Style="{StaticResource MaterialDesignOutlinedPasswordBox}"
+                    materialDesign:HintAssist.Hint="Confirmer le mot de passe" FontFamily="Javanese Text" FontSize="20"/>
+            </Grid>
+        </ScrollViewer>
+
+    </Grid>
+</Window>

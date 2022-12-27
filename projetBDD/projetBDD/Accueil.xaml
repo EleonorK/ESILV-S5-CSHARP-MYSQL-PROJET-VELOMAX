@@ -1,0 +1,70 @@
+﻿<Window x:Class="projetBDD.Accueil"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:projetBDD"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="Accueil" Height="700" Width="1000" AllowsTransparency="True" WindowStyle="None">
+    <Grid Background="#FFE5E4E4">
+        <Label Content="ACCEUIL" FontSize="30" FontFamily="Javanese Text" Margin="400,0,400,620"/>
+        <Button Name="bt_exit"
+            Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+            ToolTip="Fermer la fenêtre" Background="{x:Null}" BorderBrush="{x:Null}" Margin="960,-650,0,0" Click="bt_exit_Click">
+            <materialDesign:PackIcon
+                Kind="CloseCircle" Height="21" Width="30" />
+        </Button>
+        <Button Name="bt_notif" Height="50" Width="300" FontSize="20" FontFamily="Javanese Text"
+            Style="{StaticResource MaterialDesignRaisedButton}"
+            materialDesign:ButtonProgressAssist.Value="-1"
+            materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
+            materialDesign:ButtonProgressAssist.IsIndeterminate="True"
+            Content="STOCK"
+            Margin="570,-450,100,0"
+            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Click="bt_notif_Click" />
+        <Button Name="bt_clients" Height="50" Width="300" FontFamily="Javanese Text"
+            Style="{StaticResource MaterialDesignRaisedDarkButton}"
+            materialDesign:ButtonAssist.CornerRadius="25"
+            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Margin="100,200,550,400" Click="bt_clients_Click" Background="#FFD7CECE" Foreground="#FF030000" BorderBrush="#FFD7CECE">
+            <TextBlock
+                Text="GERER LES CLIENTS" FontSize="20"/>
+        </Button>
+        <Button Name="bt_Commandes" Height="50" Width="300" FontFamily="Javanese Text"
+            Style="{StaticResource MaterialDesignRaisedDarkButton}"
+            materialDesign:ButtonAssist.CornerRadius="25"
+            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Margin="550,200,100,400" Click="bt_commandes_Click" Background="#FFD7CECE" BorderBrush="#FFD7CECE" Foreground="#FF000001">
+            <TextBlock
+                Text="GERER LES COMMANDES" FontSize="20"/>
+        </Button>
+        <Button Name="bt_produits" Height="50" Width="300" FontFamily="Javanese Text"
+            Style="{StaticResource MaterialDesignRaisedDarkButton}"
+            materialDesign:ButtonAssist.CornerRadius="25"
+            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Margin="100,300,550,300" Click="bt_produits_Click" Cursor="Hand" Background="#FFD7CECE" BorderBrush="#FFD7CECE" Foreground="#DD000000">
+            <TextBlock
+                Text="GERER LES PRODUITS" FontSize="20"/>
+        </Button>
+        <Button Name="bt_fournisseurs" Height="50" Width="300" FontFamily="Javanese Text"
+            Style="{StaticResource MaterialDesignRaisedDarkButton}"
+            materialDesign:ButtonAssist.CornerRadius="25"
+            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Margin="550,300,100,300" Click="bt_fournisseurs_Click" Cursor="Hand" Background="#FFD7CECE" BorderBrush="#FFD7CECE" Foreground="#DD000000">
+            <TextBlock
+                Text="GERER LES FOURNISSEURS" FontSize="20"/>
+        </Button>
+        <Button x:Name="bt_stat" Height="50" Width="300" FontFamily="Javanese Text"
+            Style="{StaticResource MaterialDesignRaisedDarkButton}"
+            materialDesign:ButtonAssist.CornerRadius="25"
+            ToolTip="Statistiques"
+            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" Margin="349,459,351,191" Click="bt_stat_Click" Cursor="Hand" Background="#FFD7CECE" Foreground="#DD000000" BorderBrush="#FFD7CECE">
+            <TextBlock
+                Text="STATISTIQUES" FontSize="20"/>
+        </Button>
+    </Grid>
+</Window>

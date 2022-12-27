@@ -1,0 +1,64 @@
+﻿<Window x:Class="projetBDD.Statistiques"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:projetBDD"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="Statistiques" Height="700" Width="1000" AllowsTransparency="True" WindowStyle="None">
+    <Grid>
+        <Label Content="STATISTIQUES" FontSize="30" FontFamily="Javanese Text" Margin="400,0,376,620"/>
+        <Button Name="bt_exit"
+            Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+            ToolTip="Fermer la fenêtre" Background="{x:Null}" BorderBrush="{x:Null}" Margin="960,-650,0,0" Click="bt_exit_Click">
+            <materialDesign:PackIcon
+                Kind="CloseCircle" Height="21" Width="30" />
+        </Button>
+        <Button Name="bt_retour"
+            Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}"
+            ToolTip="Page précédente"  Click="bt_retour_Click" Height="Auto" Width="Auto" Background="#DD000000" Foreground="#FFD5D4D9" BorderBrush="#DD000000" Cursor="Hand" Margin="10,10,950,649">
+            <materialDesign:PackIcon
+                Kind="ArrowBack" />
+        </Button>
+        <Button Name="bt_qteVendues" Height="50" Width="300" FontFamily="Javanese Text"
+            Style="{StaticResource MaterialDesignRaisedDarkButton}"
+            materialDesign:ButtonAssist.CornerRadius="25"
+            ToolTip="MaterialDesignRaisedDarkButton with Round Corners"
+            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Margin="100,200,550,400" Click="bt_qteVendues_Click">
+            <TextBlock
+                Text="QUANTITE VENDUES" FontSize="20"/>
+        </Button>
+        <Button Name="bt_fidelio" Height="50" Width="300" FontFamily="Javanese Text"
+            Style="{StaticResource MaterialDesignRaisedDarkButton}"
+            materialDesign:ButtonAssist.CornerRadius="25"
+            ToolTip="MaterialDesignRaisedDarkButton with Round Corners"
+            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Margin="550,200,100,400" Click="bt_fidelio_Click">
+            <TextBlock
+                Text="FIDELIO" FontSize="20"/>
+        </Button>
+        <Button Name="bt_bestClients" Height="50" Width="300" FontFamily="Javanese Text"
+            Style="{StaticResource MaterialDesignRaisedDarkButton}"
+            materialDesign:ButtonAssist.CornerRadius="25"
+            ToolTip="MaterialDesignRaisedDarkButton with Round Corners"
+            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Margin="100,300,550,300" Click="bt_bestClients_Click" Cursor="Hand">
+            <TextBlock
+                Text="MEILLEUR CLIENTS" FontSize="20"/>
+        </Button>
+        <Button Name="bt_commandes" Height="50" Width="300" FontFamily="Javanese Text"
+            Style="{StaticResource MaterialDesignRaisedDarkButton}"
+            materialDesign:ButtonAssist.CornerRadius="25"
+            ToolTip="MaterialDesignRaisedDarkButton with Round Corners"
+            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Margin="550,300,100,300" Click="bt_commandes_Click" Cursor="Hand">
+            <TextBlock
+                Text="ANALYSE COMMANDES" FontSize="20"/>
+        </Button>
+    </Grid>
+</Window>

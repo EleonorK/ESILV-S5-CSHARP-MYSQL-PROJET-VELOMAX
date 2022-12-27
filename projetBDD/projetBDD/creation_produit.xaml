@@ -1,0 +1,179 @@
+﻿<Window x:Class="projetBDD.creation_produit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:projetBDD"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="creation_produit" Height="700" Width="1000" AllowsTransparency="True" WindowStyle="None">
+    <Grid>
+        <Grid Name="grid_velo" Margin="313,83,313,0" Visibility="Hidden">
+            <TextBox Name="tx_nomVelo" Height="92"
+            Style="{StaticResource MaterialDesignOutlinedTextBox}"
+            TextWrapping="Wrap"
+            materialDesign:TextFieldAssist.CharacterCounterVisibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=MaterialDesignOutlinedTextBoxTextCountComboBox}"
+            VerticalScrollBarVisibility="Auto"
+            materialDesign:HintAssist.Hint="nom du velo" FontFamily="Javanese Text" FontSize="20" Margin="54,0,54,440" />
+            <ComboBox Name="cb_grandeur" Height="92"
+        Style="{StaticResource MaterialDesignOutlinedComboBox}"
+            materialDesign:HintAssist.Hint= "Grandeur" FontFamily="Javanese Text" FontSize="20" VerticalAlignment="Top" Margin="54,289,54,0">
+                <ComboBoxItem
+                Content="Adulte" />
+                <ComboBoxItem
+                Content="Homme" />
+                <ComboBoxItem
+                Content="Femme" />
+                <ComboBoxItem
+                Content="Jeune" />
+                <ComboBoxItem
+                Content="Garçon" />
+                <ComboBoxItem
+                Content="Fille" />
+            </ComboBox>
+            <ComboBox x:Name="tx_ligneVelo" Height="92"
+                Style="{StaticResource MaterialDesignOutlinedComboBox}"
+                materialDesign:HintAssist.Hint="Ligne velo" FontFamily="Javanese Text" FontSize="20" Margin="54,0,54,190" Cursor="Arrow">
+                <ComboBoxItem
+                Content="VTT" />
+                <ComboBoxItem
+                Content="Vélo de course" />
+                <ComboBoxItem
+                Content="Classique" />
+                <ComboBoxItem
+                Content="BMX" />
+            </ComboBox>
+        </Grid>
+        <Grid Name="grid_piece" Margin="313,98,313,0">
+            <TextBox x:Name="tx_idSiret" PreviewTextInput="PreviewTextInput" Height="92"
+                Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                TextWrapping="Wrap"
+                materialDesign:TextFieldAssist.CharacterCounterVisibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=MaterialDesignOutlinedTextBoxTextCountComboBox}"
+                VerticalScrollBarVisibility="Auto"
+                materialDesign:HintAssist.Hint="N°fournisseur" FontFamily="Javanese Text" FontSize="20" Margin="54,20,54,490" />
+            <ComboBox Name="cb_numPieceFournisseur" Height="92"
+                Style="{StaticResource MaterialDesignOutlinedComboBox}"
+                materialDesign:HintAssist.Hint="N°piece fournisseur" FontSize="20" FontFamily="Javanese Text"
+                MinWidth="72"
+                IsEditable="True"
+                ItemsSource="{Binding LongListToTestComboVirtualization}" Margin="54,139,54,0" VerticalAlignment="Top">
+                <ComboBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <VirtualizingStackPanel />
+                    </ItemsPanelTemplate>
+                </ComboBox.ItemsPanel>
+            </ComboBox>
+            <TextBox x:Name="tx_desPiece" Height="150"
+                Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                TextWrapping="Wrap"
+                MaxLength="255"
+                materialDesign:TextFieldAssist.CharacterCounterVisibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=MaterialDesignOutlinedTextBoxTextCountComboBox}"
+                VerticalScrollBarVisibility="Auto"
+                materialDesign:HintAssist.Hint="description de la piece" FontFamily="Javanese Text" FontSize="20" Margin="54,403,54,49" />
+            <TextBox x:Name="tx_delaiPiece" Height="92"
+                Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                TextWrapping="Wrap"
+                materialDesign:TextFieldAssist.CharacterCounterVisibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=MaterialDesignOutlinedTextBoxTextCountComboBox}"
+                VerticalScrollBarVisibility="Auto"
+                materialDesign:HintAssist.Hint="delais de la piece" FontFamily="Javanese Text" FontSize="20" Margin="54,272,54,238" Cursor="Arrow" />
+
+        </Grid>
+        <Grid x:Name="grid_choix" Margin="10,10,0,444" Visibility="Hidden">
+            <Button Name="bt_exit"
+            Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+            ToolTip="Fermer la fenêtre" Background="{x:Null}" BorderBrush="{x:Null}" Margin="950,-206,0,0" Click="bt_exit_Click">
+                <materialDesign:PackIcon
+                Kind="CloseCircle" Height="21" Width="30" />
+            </Button>
+            <Button Name="bt_retour"
+            Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}"
+            ToolTip="Page précédente"  Click="bt_retour_Click" Height="Auto" Width="Auto" Background="#DD000000" Foreground="#FFD5D4D9" BorderBrush="#DD000000" Cursor="Hand" Margin="10,10,940,200">
+                <materialDesign:PackIcon
+                    Kind="ArrowBack"/>
+            </Button>
+            <Label Content="CREATION D'UN NOUVEAU PRODUIT" FontSize="30" FontFamily="Javanese Text" Margin="196,0,65,159"/>
+            <ComboBox Name="cb_produit"
+        Style="{StaticResource MaterialDesignOutlinedComboBox}"
+            materialDesign:HintAssist.Hint= "Produit" Margin="20,120,700,0" Height="92" Width="270" FontFamily="Javanese Text" FontSize="20" VerticalAlignment="Top">
+                <ComboBoxItem
+                Content="VELO" />
+                <ComboBoxItem
+                Content="PIECE" />
+            </ComboBox>
+            <Button x:Name="bt_verifProduit"
+                Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                materialDesign:ButtonAssist.CornerRadius="25"
+                ToolTip="MaterialDesignRaisedDarkButton with Round Corners"
+                IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" FontFamily="Javanese Text" Margin="350,65,500,0" Height="50" Click="bt_verifProduit_Click">
+                <TextBlock
+                    Text="confirmer" />
+            </Button>
+
+        </Grid>
+        <Grid x:Name="grid_original">
+            <TextBox x:Name="tx_numProduit" Height="92"
+            Style="{StaticResource MaterialDesignOutlinedTextBox}"
+            TextWrapping="Wrap"
+            materialDesign:TextFieldAssist.CharacterCounterVisibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=MaterialDesignOutlinedTextBoxTextCountComboBox}"
+            VerticalScrollBarVisibility="Auto"
+            materialDesign:HintAssist.Hint="Réference" FontFamily="Javanese Text" FontSize="20" Margin="700,0,30,130" />
+            <TextBox x:Name="tx_prix" Height="92"
+            Style="{StaticResource MaterialDesignOutlinedTextBox}"
+            VerticalAlignment="Top"
+            materialDesign:TextFieldAssist.HasClearButton="True"
+            materialDesign:TextFieldAssist.SuffixText="€ eur" FontSize="30" FontFamily="Javanese Text" Margin="30,240,700,0" Cursor="Arrow">
+                <materialDesign:HintAssist.Hint>
+                    <StackPanel
+                    materialDesign:HintAssist.Hint="Password"
+                    materialDesign:HintAssist.HelperText="Helper text"
+                    Orientation="Horizontal">
+                        <TextBlock
+                        Text="  prix du produit" FontSize="20" Width="189" />
+                    </StackPanel>
+                </materialDesign:HintAssist.Hint>
+            </TextBox>
+            <DatePicker
+            x:Name="tx_dateDebut" Height="92"
+            materialDesign:HintAssist.Hint="Debut de production" FontSize="20" FontFamily="Javanese Text" Margin="30,372,700,0" VerticalAlignment="Top"
+            Style="{StaticResource MaterialDesignOutlinedDatePicker}" />
+            <DatePicker
+            x:Name="tx_dateFin" Height="89"
+            materialDesign:HintAssist.Hint="Debut de discontinuation" FontSize="20" FontFamily="Javanese Text" Margin="30,502,700,0" VerticalAlignment="Top"
+            Style="{StaticResource MaterialDesignOutlinedDatePicker}" />
+            <ComboBox x:Name="cb_stock" Height="92"
+            Style="{StaticResource MaterialDesignOutlinedComboBox}"
+            materialDesign:HintAssist.Hint="stock" FontSize="20" FontFamily="Javanese Text"
+            MinWidth="72"
+            IsEditable="False"
+            ItemsSource="{Binding LongListToTestComboVirtualization}" Margin="700,120,30,0" VerticalAlignment="Top">
+                <ComboBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <VirtualizingStackPanel />
+                    </ItemsPanelTemplate>
+                </ComboBox.ItemsPanel>
+            </ComboBox>
+            <Button
+            Style="{StaticResource MaterialDesignRaisedDarkButton}"
+            materialDesign:ButtonAssist.CornerRadius="25"
+            ToolTip="MaterialDesignRaisedDarkButton with Round Corners"
+            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" Height="50" Margin="770,610,30,19" Click="Button_Click" Cursor="Hand">
+                <TextBlock
+                Text="VERIF" />
+            </Button>
+            <TextBox x:Name="tx_nomPiece" Height="92"
+                Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                TextWrapping="Wrap"
+                materialDesign:TextFieldAssist.CharacterCounterVisibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=MaterialDesignOutlinedTextBoxTextCountComboBox}"
+                VerticalScrollBarVisibility="Auto"
+                materialDesign:HintAssist.Hint="Nom de la piece" FontFamily="Javanese Text" FontSize="20" Margin="700,369,30,239" Cursor="Arrow" />
+        </Grid>
+
+    </Grid>
+</Window>

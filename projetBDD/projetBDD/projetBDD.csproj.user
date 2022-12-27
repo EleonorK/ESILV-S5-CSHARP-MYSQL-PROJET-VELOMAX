@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Accueil.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Analyse_commandes.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ClientAdhesion.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CommandeClient.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CommandeGerant.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Creation_client.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Creation_fournisseur.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="creation_produit.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Gerer_clients.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Gerer_Commande.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Gerer_fournisseur.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Gerer_produits.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="GestionFournisseur.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Gestion_clients.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Gestion_piece.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Gestion_velo.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Maj_fidelio.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Meilleurs_Clients.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Qte_vendues.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Statistiques.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ValiderCommandeClient.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Vente.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="VoirCommandes.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Accueil.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Analyse_commandes.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ClientAdhesion.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CommandeClient.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CommandeGerant.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Creation_client.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Creation_fournisseur.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="creation_produit.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Gerer_clients.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Gerer_Commande.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Gerer_fournisseur.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Gerer_produits.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="GestionFournisseur.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Gestion_clients.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Gestion_piece.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Gestion_velo.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Maj_fidelio.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Meilleurs_Clients.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Qte_vendues.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Statistiques.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ValiderCommandeClient.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Vente.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VoirCommandes.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>
